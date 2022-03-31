@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *, *::after, *::before {
+            box-sizing: border-box;
+            margin:0;
+            padding: 0;
+
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .container{
+            width: 320px;
+            height: 472px;
+        }
+
+        .row{
+            border: 1px solid #000000;
+            border-top: none;
+            display: flex;  
+            flex-direction:column;
+            align-items:center;
+        }
+
+        .row:first-child{
+            border-top: 1px solid #000000;
+        }
+
+        h1{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 8px;
+            line-height: 8px;
+            margin: 5px 0 5px 0;
+        }
+
+        p{
+            font-size: 12px;
+        }
+
+        strong{
+            margin: 7.4px 0 0 0;
+            text-transform: uppercase;
+        }
+        
+        strong.description{
+            margin: 7.4px 0 0 0;
+            text-transform: uppercase;
+
+            font-size: 18px;
+        }
+
+        .sizeMed{
+            font-size: 18px;
+            margin: 5px 0 0 0;
+        }
+
+        .sizeMax{
+            font-size: 26px;
+        }
+
+        .row svg{
+            margin-bottom: 5px;
+            margin-top: 2px;
+        }
+
+        .info{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width:100%; 
+            height: 20px;
+            border-top: 1px solid #000000;
+        }
+
+        .info div {
+            width: 50%;
+            border-left: 1px solid #000000 ;
+            padding: 0 8px 0 8px ;
+            align-items: center;
+        }
+
+        .info:first-child{
+            border-top: none;
+        }
+
+        .info div:first-child{
+            border-left: none;
+            align-self: center;
+        }
+
+        .info div:last-child{
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .be{
+            flex-direction: row;
+            justify-content: space-around;
+            font-size:13px; 
+            font-family: 'Roboto';
+        }
+
+        .be div {
+            width: 50%;
+            border-left: 1px solid #000000 ;
+            padding:9px;
+        }
+
+        .be div:first-child{
+            border-left: none;
+        }
+
+        .be div {
+            display: flex;
+            justify-content: center;
+            text-transform: uppercase;
+        }
+
+        .be strong{
+            margin: 1px 0 1px 0;
+        }
+
+        .box{
+            padding: 5px;
+            
+        }
+
+        .box p{
+            font-size: 16px;
+            font-weight: bold; 
+            text-transform: uppercase;
+        }
+        
+        .be:last-child{
+            justify-content: space-between;
+            padding: 0 10px 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>PONTO DE USO</h1>
+        </div>
+    
+        <div class="row ">
+            <strong>RR 740B</strong>
+            <svg id="barcode"></svg>
+        </div>
+    
+        <div class="row">
+            <strong class="sizeMed">EST 05-K-04</strong>
+            <svg id="barcode"></svg>
+        </div>
+    
+        <div class="row">
+            <strong class="description">CLIPE</strong>
+            <svg id="barcode"></svg>
+            <strong class="sizeMax">35390952</strong>
+            <svg id="barcode"></svg>
+        </div>
+    
+        <div class="row box">
+            <p>Caixa 5</p>
+        </div>
+    
+        <div class="row" >
+            <div class="info"> 
+                <div><p>Qtd. Aproximada:</p></div>
+                <div><p >21</p></div>
+            </div>
+           
+            <div class="info">
+                <div><p>Qtd. de Cartões:</p></div>
+                <div><p >2</p></div>
+            </div>
+           
+            <div class="info">
+                <div><p>Estoque:</p></div>
+                <div><p >2,63</p></div>
+            </div>
+            
+            <div class=" info">
+                <div><p>Fornecedor:</p></div>
+                <div><p>000000000</p></div>
+            </div> 
+        </div>
+    
+        <div class="row be">
+            <strong style="font-size:11px">Rack</strong>
+            <strong style="font-size:11px">endereço</strong>
+        </div>
+    
+        <div class=" row be">
+            <div><p style="font-size:26px; font-weight: 600;">ALF</p></div>
+            <div><p style="font-size:26px; font-weight: 600;">09D1</p></div>
+            
+        </div>
+            
+        <div class="row">
+            <svg id="barcode2"></svg>
+        </div>
+    
+        <div class="row be">
+            <p style="font-size:9px">Revisão</p>
+            <svg id="barcode3"></svg>
+            <p style="font-size:9px">21/01/2021</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <h1>PONTO DE USO</h1>
+        </div>
+    
+        <div class="row ">
+            <strong>RR 740B</strong>
+            <svg id="barcode"></svg>
+        </div>
+    
+        <div class="row">
+            <strong class="sizeMed">EST 05-K-04</strong>
+            <svg id="barcode"></svg>
+        </div>
+    
+        <div class="row">
+            <strong class="description">CLIPE</strong>
+            <svg id="barcode"></svg>
+            <strong class="sizeMax">35390952</strong>
+            <svg id="barcode"></svg>
+        </div>
+    
+        <div class="row box">
+            <p>Caixa 5</p>
+        </div>
+    
+        <div class="row" >
+            <div class="info"> 
+                <div><p>Qtd. Aproximada:</p></div>
+                <div><p >21</p></div>
+            </div>
+           
+            <div class="info">
+                <div><p>Qtd. de Cartões:</p></div>
+                <div><p >2</p></div>
+            </div>
+           
+            <div class="info">
+                <div><p>Estoque:</p></div>
+                <div><p >2,63</p></div>
+            </div>
+            
+            <div class=" info">
+                <div><p>Fornecedor:</p></div>
+                <div><p>000000000</p></div>
+            </div> 
+        </div>
+    
+        <div class="row be">
+            <strong style="font-size:11px">Rack</strong>
+            <strong style="font-size:11px">endereço</strong>
+        </div>
+    
+        <div class=" row be">
+            <div><p style="font-size:26px; font-weight: 600;">ALF</p></div>
+            <div><p style="font-size:26px; font-weight: 600;">09D1</p></div>
+            
+        </div>
+            
+        <div class="row">
+            <svg id="barcode2"></svg>
+        </div>
+    
+        <div class="row be">
+            <p style="font-size:9px">Revisão</p>
+            <svg id="barcode3"></svg>
+            <p style="font-size:9px">21/01/2021</p>
+        </div>
+    </div>
+
+    <!-- <iframe src="./cartao_circuito.html" frameborder="0"></iframe> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+    
+    <script>
+        JsBarcode("#barcode", "35390952", {
+            width: 1.55,
+            height: 20,
+            margin: 0,
+            displayValue: false
+        });
+
+        JsBarcode("#barcode2", "35390952", {
+            width: 1.55,
+            height: 16,
+            margin: 0,
+            displayValue: false
+        });
+
+        JsBarcode("#barcode3", "35390952", {
+            width: 0.57,
+            height: 11,
+            margin: 0,
+            displayValue: false
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *, *::after, *::before {
+            box-sizing: border-box;
+            margin:0;
+            padding: 0;
+
+            text-transform: uppercase;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .container {
+            width: 273px;
+            height: 245PX;
+            margin: 7px;
+        }
+
+        .row{
+            border: 1px solid;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 7px 0 7px 0;
+            border-top: none;
+        }
+
+        .row:first-child{
+            border-top: 1px solid;
+        }
+
+        h1{
+            font-size: 16px;
+        }
+
+        .col{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .col .row{
+            width: 25%;
+            padding: 0;
+            border-top: none;
+            border-right: none; 
+        }
+
+        .col .row:last-child{
+            border-right: 1px solid;
+            background-color: white;
+        }
+
+        .col .row p{
+            padding: 4px 0 4px 0;
+        }
+
+        .col .row div{
+            border-bottom: 1px solid;
+            font-size: 8px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .col .row div:last-child{
+            border-bottom: none;
+            font-size: 14px;
+        }
+        .col strong{
+            font-size: 8px;
+        }
+
+        .col .be{
+            display: flex;
+            align-items: center;
+            width: 50%;
+            height: 100%;
+            justify-content: center;
+            border: 1px solid;
+            border-top: none;
+        }
+
+        .col .be:first-child{
+            border-right: none;
+        }
+
+        .col:last-child{
+            border: 1px solid;
+            border-top: none;
+        }
+
+        .col .essa{
+            border: none; 
+        }
+
+        .col .essa2{
+            border-right: none !important; 
+            border-bottom: none !important; 
+        }
+
+        .col .essa2 div{
+            font-size: 6px;
+        }
+
+        .col .essa2 div:first-child{
+            padding: 10px;
+            justify-content: center;
+        }
+
+        .col .essa2 div p{
+            font-size: 6px;
+            display: flex;
+            justify-content: end;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1 style="font-size: 18px;">TOYOTA ETIOS</h1>
+        </div>
+
+        <div class="row">
+            <strong style="font-size: 18px;">MESA 04-M-08</strong>
+
+            <svg id="barcode"></svg>
+        </div>
+
+        <div class="row">
+            <strong style="font-size: 20px;">L4046260</strong>
+            
+            <svg id="barcode2"></svg>
+        </div>
+
+        <div class="col">
+            <div class="row"> 
+                <div>
+                    <p style="font-size: 8px;">QTD. MAÇOS</p>
+                </div>
+
+                <div>
+                    <p style="font-size: 11px;">1</p>
+                </div>
+            </div>
+        
+            <div class="row">
+                <div>
+                    <p style="font-size: 8px;">QTD. P/ MAÇO</p>
+                </div>
+
+                <div>
+                    <p style="font-size: 11px;">100</p>
+                </div>
+            </div>
+        
+            <div class="row">
+                <div>
+                    <p style="font-size: 8px;">ESTOQUE</p>
+                </div>
+
+                <div>
+                    <p style="font-size: 11px;">4,00h</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div>
+                    <p style="font-size: 8px;">MÁQUINA</p>
+                </div>
+                
+                <div>
+                    <p style="font-size: 11px;">KO355006</p>
+                </div>
+            </div> 
+        </div>
+
+        <div class="col">
+            <div class="be">
+                <strong style="font-size: 10px;">Rack</strong>
+            </div>
+            
+            <div class="be">
+                <strong style="font-size: 10px;">endereço</strong>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="be essa">
+                <p style="font-size: 26px; font-weight: 600;">TOY15</p>
+            </div>
+            
+            <div class="row be essa2">
+                <div style="font-size: 26px; font-weight: 600;">D13</div>
+                
+                <div>
+                    <p style="font-size: 8px; text-align: center;">Atualizado em: 22/01/2022 11:59</p>
+                </div>    
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="margin-top: 50px;">
+        <div class="row">
+            <h1 style="font-size: 18px;">TOYOTA ETIOS</h1>
+        </div>
+
+        <div class="row">
+            <strong style="font-size: 18px;">MESA 04-M-08</strong>
+
+            <svg id="barcode"></svg>
+        </div>
+
+        <div class="row">
+            <strong style="font-size: 20px;">L4046260</strong>
+            
+            <svg id="barcode2"></svg>
+        </div>
+
+        <div class="col">
+            <div class="row"> 
+                <div>
+                    <p style="font-size: 8px;">QTD. MAÇOS</p>
+                </div>
+
+                <div>
+                    <p style="font-size: 11px;">1</p>
+                </div>
+            </div>
+        
+            <div class="row">
+                <div>
+                    <p style="font-size: 8px;">QTD. P/ MAÇO</p>
+                </div>
+
+                <div>
+                    <p style="font-size: 11px;">100</p>
+                </div>
+            </div>
+        
+            <div class="row">
+                <div>
+                    <p style="font-size: 8px;">ESTOQUE</p>
+                </div>
+
+                <div>
+                    <p style="font-size: 11px;">4,00h</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div>
+                    <p style="font-size: 8px;">MÁQUINA</p>
+                </div>
+                
+                <div>
+                    <p style="font-size: 11px;">KO355006</p>
+                </div>
+            </div> 
+        </div>
+
+        <div class="col">
+            <div class="be">
+                <strong style="font-size: 10px;">Rack</strong>
+            </div>
+            
+            <div class="be">
+                <strong style="font-size: 10px;">endereço</strong>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="be essa">
+                <p style="font-size: 26px; font-weight: 600;">TOY15</p>
+            </div>
+            
+            <div class="row be essa2 ">
+                <div style="font-size: 26px; font-weight: 600;">D13</div>
+                
+                <div>
+                    <p style="font-size: 8px; text-align: center;">Atualizado em: 22/01/2022 11:59</p>
+                </div>    
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+
+    <script>
+        JsBarcode("#barcode", "MESA 04-M-08", {
+            width: 1,
+            height: 18,
+            margin: 0,
+            displayValue: false
+        });
+
+        JsBarcode("#barcode2", "L4046260", {
+            width: 1.21,
+            height: 18,
+            margin: 0,
+            displayValue: false
+        });
+    </script>
+</body>
+</html>
