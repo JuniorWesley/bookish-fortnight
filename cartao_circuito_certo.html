@@ -1,0 +1,579 @@
+<?php 
+    include '../include/controle_sessao.php';
+
+    $nome_usuario           = $_SESSION['nomeUsuarioLogado'];              
+    $matricula_colaborador  = $_SESSION['matriculaColaborador'];               
+    $id_tbl_acessos         = $_SESSION['idUsuarioAcessos'];
+    $valida_ldap            = $_SESSION['ldap']; 
+?>
+
+<html lang="en">
+<head>
+    <title>SAM-3 | Cartão</title>
+
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
+
+    <link rel="stylesheet" href="../../assets/plugins/dropify/dist/css/dropify.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Libre Barcode 39' rel='stylesheet'>
+    <!-- <link href="../../fonts/LibreBarCode39.css" rel='stylesheet'> -->
+
+    <style>
+        *, *::after, *::before {
+            box-sizing: border-box;
+            margin:0;
+            padding: 0;
+
+            text-transform: uppercase;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        main {
+            margin: 8px 10px;
+        }
+
+        .container {
+            width: 273px;
+            height: 235px;
+        }
+
+        .row{
+            border: 1px solid;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4px 0 4px 0;
+            border-top: none;
+        }
+
+        .row:first-child{
+            border-top: 1px solid;
+        }
+
+        h1{
+            font-size: 16px;
+        }
+
+        .col{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .col .row{
+            width: 25%;
+            padding: 0;
+            border-top: none;
+            border-right: none; 
+        }
+
+        .col .row:last-child{
+            border-right: 1px solid;
+            background-color: white;
+        }
+
+        .col .row p{
+            padding: 4px 0 4px 0;
+        }
+
+        .col .row div{
+            border-bottom: 1px solid;
+            font-size: 8px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .col .row div:last-child{
+            border-bottom: none;
+            font-size: 14px;
+        }
+        .col strong{
+            font-size: 8px;
+        }
+
+        .col .be{
+            display: flex;
+            align-items: center;
+            width: 50%;
+            height: 100%;
+            justify-content: center;
+            border: 1px solid;
+            border-top: none;
+        }
+
+        .col .be:first-child{
+            border-right: none;
+        }
+
+        .col:last-child{
+            border: 1px solid;
+            border-top: none;
+        }
+
+        .col .essa{
+            border: none; 
+        }
+
+        .col .essa2{
+            border-right: none !important; 
+            border-bottom: none !important; 
+        }
+
+        .col .essa2 div{
+            font-size: 6px;
+        }
+
+        .col .essa2 div:first-child{
+            padding: 2px;
+            justify-content: center;
+        }
+
+        .col .essa2 div p{
+            font-size: 6px;
+            display: flex;
+            justify-content: end;
+        }
+
+        .barcode {
+            margin: 0;
+            vertical-align: top;
+            color: #000044;
+        }
+        .barcodecell {
+            text-align: center;
+            vertical-align: middle;
+        }
+        
+        .barcode p {
+            font-family: 'Libre Barcode 39';
+            font-size: 32px;
+            margin-bottom: -10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <main style="display: flex; gap: .1rem; flex-wrap: wrap;">
+        <div class="container">
+            <div class="row">
+                <h1 style="font-size: 18px;">H. LAMP D2XX</h1>
+            </div>
+
+            <div class="row">
+                <strong style="font-size: 18px;">CEL01-S05</strong>
+
+                <div class="barcodecell">
+                    <div class="barcode">
+                        <p>*CEL01-S05*</p> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <strong style="font-size: 20px;">L4066669</strong>
+                
+                <div class="barcodecell">
+                    <div class="barcode">
+                        <p>*L4066669*</p> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="row"> 
+                    <div>
+                        <p style="font-size: 8px;">QTD. MAÇOS</p>
+                    </div>
+
+                    <div>
+                        <p style="font-size: 11px;">1.0</p>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div>
+                        <p style="font-size: 8px;">QTD. P/ MAÇO</p>
+                    </div>
+
+                    <div>
+                        <p style="font-size: 11px;">100.00</p>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div>
+                        <p style="font-size: 8px;">ESTOQUE</p>
+                    </div>
+
+                    <div>
+                        <p style="font-size: 11px; text-transform: lowercase;">9.03h</p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div>
+                        <p style="font-size: 8px;">MÁQUINA</p>
+                    </div>
+                    
+                    <div>
+                        <p style="font-size: 11px;">KO550001</p>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="col">
+                <div class="be">
+                    <strong style="font-size: 10px;">Rack</strong>
+                </div>
+                
+                <div class="be">
+                    <strong style="font-size: 10px;">Endereço</strong>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="be essa">
+                    <p style="font-size: 28px; font-weight: 600; line-height: 20px;">P109</p>
+                </div>
+                
+                <div class="row be essa2">
+                    <div style="font-size: 26px; font-weight: 600;">C05</div>
+                    
+                    <div>
+                        <p style="font-size: 8px; line-height: 1px; text-align: center;">2022-04-18 09:23:53.957</p>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        async function GetCardValues() {
+            const Id_Stored_Procedure = 1324;
+
+            const cookie = document.cookie;
+
+            const initialize = await fetch(`../../../backend/rotas.php`, {
+            credentials: 'same-origin',
+            method: 'POST',
+            body: `id_sp=${Id_Stored_Procedure}&params='${cookie}'`,
+            headers: { 'Content-type': 'application/x-www-form-urlencoded' }
+            }).then(response => {
+                response.json().then(data => {
+                    let content = "";
+                    
+                    for(let i = 0; i < data.length; i++) {
+                        for(let counter = 0; counter < 2; counter++) {
+                            if(((i + 1) * 1) % 4 === 0 && i !== 4) {
+                                content += `
+                                    <div class="container" style="margin-bottom: 96.5px;">
+                                        <div class="row">
+                                            <h1 style="font-size: 18px;">${data[i].TIME}</h1>
+                                        </div>
+    
+                                        <div class="row">
+                                            <strong style="font-size: 18px;">${data[i].LOCACAO}</strong>
+    
+                                            <div class="barcodecell">
+                                                <div class="barcode">
+                                                    <p>*${data[i].LOCACAO}*</p> 
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                        <div class="row">
+                                            <strong style="font-size: 20px;">${data[i].CIRCUITO}</strong>
+                                            
+                                            <div class="barcodecell">
+                                                <div class="barcode">
+                                                    <p>*${data[i].CIRCUITO}*</p> 
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                        <div class="col">
+                                            <div class="row"> 
+                                                <div>
+                                                    <p style="font-size: 8px;">QTD. MAÇOS</p>
+                                                </div>
+    
+                                                <div>
+                                                    <p style="font-size: 11px;">${data[i].QUANTIDADE_MACOS}</p>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="row">
+                                                <div>
+                                                    <p style="font-size: 8px;">QTD. P/ MAÇO</p>
+                                                </div>
+    
+                                                <div>
+                                                    <p style="font-size: 11px;">${data[i].MULTIPLO}</p>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="row">
+                                                <div>
+                                                    <p style="font-size: 8px;">ESTOQUE</p>
+                                                </div>
+    
+                                                <div>
+                                                    <p style="font-size: 11px; text-transform: lowercase;">${Number(data[i].ESTOQUE).toFixed(2)}h</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div>
+                                                    <p style="font-size: 8px;">MÁQUINA</p>
+                                                </div>
+                                                
+                                                <div>
+                                                    <p style="font-size: 11px;">${data[i].MAQUINA}</p>
+                                                </div>
+                                            </div> 
+                                        </div>
+    
+                                        <div class="col">
+                                            <div class="be">
+                                                <strong style="font-size: 10px;">Rack</strong>
+                                            </div>
+                                            
+                                            <div class="be">
+                                                <strong style="font-size: 10px;">Endereço</strong>
+                                            </div>
+                                        </div>
+    
+                                        <div class="col">
+                                            <div class="be essa">
+                                                <p style="font-size: 28px; font-weight: 600; line-height: 20px;">${data[i].PAGODA.substr(0, 4)}</p>
+                                            </div>
+                                            
+                                            <div class="row be essa2">
+                                                <div style="font-size: 26px; font-weight: 600;">${data[i].PAGODA.substr(4)}</div>
+                                                
+                                                <div>
+                                                    <p style="font-size: 8px; line-height: 1px; text-align: center;">${data[i].DATA_MODIFICACAO}</p>
+                                                </div>    
+                                            </div>
+                                        </div>
+                                    </div>
+                                `
+                            }
+
+                            else if(i == 4) {
+                                content += `
+                                    <div class="container" style="margin-top: 97px; ">
+                                        <div class="row">
+                                            <h1 style="font-size: 18px;">${data[i].TIME}</h1>
+                                        </div>
+    
+                                        <div class="row">
+                                            <strong style="font-size: 18px;">${data[i].LOCACAO}</strong>
+    
+                                            <div class="barcodecell">
+                                                <div class="barcode">
+                                                    <p>*${data[i].LOCACAO}*</p> 
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                        <div class="row">
+                                            <strong style="font-size: 20px;">${data[i].CIRCUITO}</strong>
+                                            
+                                            <div class="barcodecell">
+                                                <div class="barcode">
+                                                    <p>*${data[i].CIRCUITO}*</p> 
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                        <div class="col">
+                                            <div class="row"> 
+                                                <div>
+                                                    <p style="font-size: 8px;">QTD. MAÇOS</p>
+                                                </div>
+    
+                                                <div>
+                                                    <p style="font-size: 11px;">${data[i].QUANTIDADE_MACOS}</p>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="row">
+                                                <div>
+                                                    <p style="font-size: 8px;">QTD. P/ MAÇO</p>
+                                                </div>
+    
+                                                <div>
+                                                    <p style="font-size: 11px;">${data[i].MULTIPLO}</p>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="row">
+                                                <div>
+                                                    <p style="font-size: 8px;">ESTOQUE</p>
+                                                </div>
+    
+                                                <div>
+                                                    <p style="font-size: 11px; text-transform: lowercase;">${Number(data[i].ESTOQUE).toFixed(2)}h</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div>
+                                                    <p style="font-size: 8px;">MÁQUINA</p>
+                                                </div>
+                                                
+                                                <div>
+                                                    <p style="font-size: 11px;">${data[i].MAQUINA}</p>
+                                                </div>
+                                            </div> 
+                                        </div>
+    
+                                        <div class="col">
+                                            <div class="be">
+                                                <strong style="font-size: 10px;">Rack</strong>
+                                            </div>
+                                            
+                                            <div class="be">
+                                                <strong style="font-size: 10px;">Endereço</strong>
+                                            </div>
+                                        </div>
+    
+                                        <div class="col">
+                                            <div class="be essa">
+                                                <p style="font-size: 28px; font-weight: 600; line-height: 20px;">${data[i].PAGODA.substr(0, 4)}</p>
+                                            </div>
+                                            
+                                            <div class="row be essa2">
+                                                <div style="font-size: 26px; font-weight: 600;">${data[i].PAGODA.substr(4)}</div>
+                                                
+                                                <div>
+                                                    <p style="font-size: 8px; line-height: 1px; text-align: center;">${data[i].DATA_MODIFICACAO}</p>
+                                                </div>    
+                                            </div>
+                                        </div>
+                                    </div>
+                                `
+                            }
+
+                            else {
+                                content += `
+                                    <div class="container">
+                                        <div class="row">
+                                            <h1 style="font-size: 18px;">${data[i].TIME}</h1>
+                                        </div>
+    
+                                        <div class="row">
+                                            <strong style="font-size: 18px;">${data[i].LOCACAO}</strong>
+    
+                                            <div class="barcodecell">
+                                                <div class="barcode">
+                                                    <p>*${data[i].LOCACAO}*</p> 
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                        <div class="row">
+                                            <strong style="font-size: 20px;">${data[i].CIRCUITO}</strong>
+                                            
+                                            <div class="barcodecell">
+                                                <div class="barcode">
+                                                    <p>*${data[i].CIRCUITO}*</p> 
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                        <div class="col">
+                                            <div class="row"> 
+                                                <div>
+                                                    <p style="font-size: 8px;">QTD. MAÇOS</p>
+                                                </div>
+    
+                                                <div>
+                                                    <p style="font-size: 11px;">${data[i].QUANTIDADE_MACOS}</p>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="row">
+                                                <div>
+                                                    <p style="font-size: 8px;">QTD. P/ MAÇO</p>
+                                                </div>
+    
+                                                <div>
+                                                    <p style="font-size: 11px;">${data[i].MULTIPLO}</p>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="row">
+                                                <div>
+                                                    <p style="font-size: 8px;">ESTOQUE</p>
+                                                </div>
+    
+                                                <div>
+                                                    <p style="font-size: 11px; text-transform: lowercase;">${Number(data[i].ESTOQUE).toFixed(2)}h</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div>
+                                                    <p style="font-size: 8px;">MÁQUINA</p>
+                                                </div>
+                                                
+                                                <div>
+                                                    <p style="font-size: 11px;">${data[i].MAQUINA}</p>
+                                                </div>
+                                            </div> 
+                                        </div>
+    
+                                        <div class="col">
+                                            <div class="be">
+                                                <strong style="font-size: 10px;">Rack</strong>
+                                            </div>
+                                            
+                                            <div class="be">
+                                                <strong style="font-size: 10px;">Endereço</strong>
+                                            </div>
+                                        </div>
+    
+                                        <div class="col">
+                                            <div class="be essa">
+                                                <p style="font-size: 28px; font-weight: 600; line-height: 20px;">${data[i].PAGODA.substr(0, 4)}</p>
+                                            </div>
+                                            
+                                            <div class="row be essa2">
+                                                <div style="font-size: 26px; font-weight: 600;">${data[i].PAGODA.substr(4)}</div>
+                                                
+                                                <div>
+                                                    <p style="font-size: 8px; line-height: 1px; text-align: center;">${data[i].DATA_MODIFICACAO}</p>
+                                                </div>    
+                                            </div>
+                                        </div>
+                                    </div>
+                                `
+                            }
+                        }
+                    }
+
+                    document.querySelector("main").innerHTML = content;
+                    
+                    setTimeout(() => {
+                        window.print();
+                    }, 3000);
+                    
+                })
+            })
+        }
+
+        GetCardValues()
+
+    </script>
+</body>
+</html>
